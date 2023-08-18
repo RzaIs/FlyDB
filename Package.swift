@@ -5,6 +5,12 @@ import PackageDescription
 
 let package = Package(
     name: "FlyDB",
+    platforms: [
+        .iOS(.v13),
+        .macOS(.v10_15),
+        .tvOS(.v13),
+        .watchOS(.v6),
+    ],
     products: [
         .library(
             name: "FlyDB",
@@ -14,11 +20,8 @@ let package = Package(
     dependencies: [],
     targets: [
         .target(
-            name: "CoreDB"
-        ),
-        .target(
             name: "FlyDB",
-            dependencies: ["CoreDB"]
+            dependencies: []
         ),
         .testTarget(
             name: "FlyDBTests",
